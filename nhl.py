@@ -118,11 +118,18 @@ for i, txt in enumerate(set(regular_player_seasons.Season)):
 
 std_dev_df = pd.DataFrame(data=std_devs)
 print(std_dev_df)
+
+ # it looks like these have both increased over time which flies in the face of the
+ # rules in Full House Chapter 10
+ # 1. "Complex systems improve when the best players play by the same rules over extended
+ #   periods of time. As systems improve they equilibriate and variation decreases"
+ #       - this one is debateable, I guess since some rules have changed over time
+
 p = std_dev_df.plot(x='Season', y=['H_SCORE_PTS', 'M_SCORE_PTS', 'L_SCORE_PTS', 'PTS_STD'])
 p = std_dev_df.plot(x='Season', y=['H_SCORE_G', 'M_SCORE_G', 'L_SCORE_G', 'G_STD'])
 
+
 # next
-#   - sd's of avg, high end, low end goal scorers over time
 #   - overall goals scored in league over time
 #   - same things for goalie stats over time 
 
@@ -133,10 +140,7 @@ p = std_dev_df.plot(x='Season', y=['H_SCORE_G', 'M_SCORE_G', 'L_SCORE_G', 'G_STD
 #for i, txt in enumerate(regular_players.Player_Name):
 #    p.annotate(txt, (regular_players.Season.iat[i]+0.05, regular_players.PTS.iat[i]))
 
-
-
 plt.show()
 
 
 # plot these next
-
